@@ -3,7 +3,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 
 const StripeCheckoutButton = ({ price }) => {
-  const priceForStripe = price * 100;
+  //const priceForStripe = price * 100;
   const publishableKey = 'pk_test_51HHNHjEkBya3ViobFyGU07eTdx0u2fNzGIg19ojm1UWRAjyW1jM0G19PMnBMNk61qps5fVBP6XkIBDLd9YG08F1A00o8e6SCRb';
 
   const onToken = token => {
@@ -31,7 +31,7 @@ const StripeCheckoutButton = ({ price }) => {
       billingAddress
       shippingAddress
       description={`Your total is Rs ${price}`}
-      amount={priceForStripe}
+      amount={price}
       panelLabel='Pay Now'
       token={onToken}
       stripeKey={publishableKey}
